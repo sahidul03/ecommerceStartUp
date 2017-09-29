@@ -8,7 +8,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Then Run the server
 
-Run `npm start` run the app [Karma](https://karma-runner.github.io).
+Run `npm start` in terminal and hit this link http://localhost:3000/#/books
 
 ## Further help
 
