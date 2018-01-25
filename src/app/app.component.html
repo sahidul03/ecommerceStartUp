@@ -9,14 +9,20 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a [routerLink]="['/books']" class="navbar-brand">Books</a>
+        <!--<a [routerLink]="['/items']" class="navbar-brand">Items</a>-->
         <!--<a class="navbar-brand" href="#">Project name</a>-->
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <!--<li class="active">-->
-            <!--<a [routerLink]="['/books']" class="btn btn-success">Books</a>-->
-          <!--</li>-->
+          <li class="active">
+            <a [routerLink]="['/categories']" class="btn btn-success">Categories</a>
+          </li>
+          <li class="active">
+            <a [routerLink]="['/items']" class="btn btn-success">Items</a>
+          </li>
+          <li class="active">
+            <a [routerLink]="['/orders']" class="btn btn-success">Make Order</a>
+          </li>
           <!--<li><a href="#">About</a></li>-->
           <!--<li><a href="#">Contact</a></li>-->
           <!--<li class="dropdown">-->

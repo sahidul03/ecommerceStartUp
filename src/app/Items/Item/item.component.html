@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Items
+    <a [routerLink]="['/item-create']" class="btn btn-default btn-lg">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </a>
+  </h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Details</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{ item.name }}</td>
+      <td>{{ item.category.name }}</td>
+      <td>{{ item.price }}</td>
+      <td>{{ item.details }}</td>
+      <td>
+        <button class="btn btn-danger" type="button" (click)="deleteItem(item)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

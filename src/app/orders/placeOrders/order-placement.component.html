@@ -1,0 +1,52 @@
+<div class="container">
+  <h4>Please Order
+  </h4>
+  <div class="col-lg-4 col-sm-4 col-md-4 col-xs-4">
+    <form (ngSubmit)="addItemToOrderList()" #categoryForm="ngForm">
+      <div class="form-group">
+        <label>Select Item</label>
+        <select class="form-control" [(ngModel)]="selectedItem.item" name="item" required>
+          <option *ngFor="let item of items" [ngValue]="item">{{item.name}}<span style="font-size: 10px;"> - {{item.price}}Tk</span>
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Quantity</label>
+        <input type="number" class="form-control" [(ngModel)]="selectedItem.quantity" name="quantity" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success" [disabled]="!categoryForm.form.valid">Add Item</button>
+      </div>
+    </form>
+  </div>
+  <div class="border-right-gray col-lg-8 col-sm-8 col-md-8 col-xs-8">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th class="text-right">Price</th>
+        <th class="text-right">Quantity</th>
+        <th class="text-right">Sub Total</th>
+        <th class="text-right"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let orderedItem of orderedItems">
+        <td>{{ orderedItem.item.name }}</td>
+        <td class="text-right">{{ orderedItem.item.price }}</td>
+        <td class="text-right">{{ orderedItem.quantity }}</td>
+        <td class="text-right">{{ orderedItem.quantity*orderedItem.item.price }}</td>
+        <td class="text-right"><button (click)="removeFromOrderedItem(orderedItem)" class="btn btn-danger btn-xs">Remove</button></td>
+      </tr>
+      <tr *ngIf="totalCost()" style="background-color: aliceblue">
+        <td></td>
+        <td></td>
+        <td class="text-right">Total:</td>
+        <td class="text-right">{{totalCost()}}</td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

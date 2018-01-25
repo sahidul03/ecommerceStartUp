@@ -1,14 +1,17 @@
-# Mean crud App
+# Order Placement App
+
+In this project you can create Item category, Item list and you can make order items.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.4.
 
-## At first Build the app
+## Steps 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+01. Install Node, MongoDB.
+02. Go to project directory.
+03. Run: npm install.
+04. Run: ng build
+05. Run `npm start` in terminal and hit this link http://localhost:3000/#/categories
 
-## Then Run the server
-
-Run `npm start` in terminal and hit this link http://localhost:3000/#/books
 
 ## Further help
 

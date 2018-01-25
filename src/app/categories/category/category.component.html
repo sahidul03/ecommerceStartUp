@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Categories
+    <a [routerLink]="['/category-create']" class="btn btn-default btn-lg">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </a>
+    <a [routerLink]="['/items']" class="btn btn-default btn-lg pull-right">
+      Items
+    </a>
+  </h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let category of categories">
+      <td>{{ category.name }}</td>
+      <td>
+        <button class="btn btn-danger" type="button" (click)="deleteCategory(category)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

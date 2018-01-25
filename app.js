@@ -4,13 +4,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
-var book = require('./routes/book');
+var category = require('./routes/category');
+var item = require('./routes/item');
+var order = require('./routes/order');
 var app = express();
 var mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/mean-app')
+mongoose.connect('mongodb://localhost/itemEntryAssignment')
   .then(function () {
     console.log('connection successful');
   })
@@ -23,7 +25,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended': 'false'}));
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.use('/book', book);
+app.use('/categories', category);
+app.use('/items', item);
+app.use('/orders', order);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

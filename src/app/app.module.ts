@@ -6,34 +6,35 @@ import { FormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { BookService } from './book.service';
-import { BookComponent } from './book/book.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
-import { BookCreateComponent } from './book-create/book-create.component';
-import { BookEditComponent } from './book-edit/book-edit.component';
+
+import { CategoryService } from './services/category.service';
+import { ItemService } from './services/item.service';
+
+import { CategoryComponent } from './categories/category/category.component';
+import { CategoryCreateComponent } from './categories/category-create/category-create.component';
+import { ItemCreateComponent } from './Items/item-create/item-create.component';
+import { ItemComponent } from './Items/Item/item.component';
+import { OrderPlacementComponent } from './orders/placeOrders/order-placement.component';
+
 
 const ROUTES = [
-  { path: '', redirectTo: 'books', pathMatch: 'full' },
-  { path: 'books', component: BookComponent },
-  { path: 'book-details/:id', component: BookDetailComponent },
-  { path: 'book-create', component: BookCreateComponent },
-  { path: 'book-edit/:id', component: BookEditComponent }
+  { path: '', redirectTo: 'categories', pathMatch: 'full' },
+  { path: 'categories', component: CategoryComponent },
+  { path: 'category-create', component: CategoryCreateComponent },
+  { path: 'items', component: ItemComponent },
+  { path: 'item-create', component: ItemCreateComponent },
+  { path: 'orders', component: OrderPlacementComponent },
 ];
 
-// const appRoutes: Routes = [
-//   { path: '', redirectTo: 'books', pathMatch: 'full' },
-//   { path: 'books', component: BookComponent },
-//   { path: 'book-details/:id', component: BookDetailComponent },
-//   { path: 'book-create', component: BookCreateComponent }
-// ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent,
-    BookDetailComponent,
-    BookCreateComponent,
-    BookEditComponent
+    CategoryComponent,
+    CategoryCreateComponent,
+    ItemCreateComponent,
+    ItemComponent,
+    OrderPlacementComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,8 @@ const ROUTES = [
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
-    BookService,
+    CategoryService,
+    ItemService,
     {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
